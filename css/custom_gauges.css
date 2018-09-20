@@ -1,0 +1,17 @@
+#container {
+    width: 1280px;
+    height: 720px;
+}
+#cont-left {
+    display: inline-block;
+}
+#cont-center {
+    display: inline-block;
+}
+#cont-right {
+    display: inline-block;
+}
+.temp {
+    margin-top: 50%;
+    margin-bottom: 50%;
+}
