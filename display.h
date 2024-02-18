@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <memory>
-#include "pico-ssd1306/ssd1306.h"
+#include "ssd1306.h"
 
 using namespace pico_ssd1306;
 
