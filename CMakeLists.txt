@@ -17,11 +17,12 @@ project(gauges C CXX ASM)
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
-add_subdirectory(pico-ssd1306)
+# Add the SSD library to the build
+add_subdirectory($ENV{SSD1306_LIB_PATH} ./dep_builds)
 
 # Add executable. Default name is the project name, version 0.1
 add_executable(gauges main.cpp display.cpp voltage.cpp oil.cpp temperature.cpp measurement.cpp SteinhartHart.cpp)
-pico_set_program_name(gauges "gauges")
+pico_set_program_name(gauges "Automotive Gauges")
 pico_set_program_version(gauges "0.1")
 
 pico_enable_stdio_usb(gauges 1)
@@ -35,6 +36,8 @@ target_link_libraries(gauges
         pico_ssd1306
         hardware_i2c
         )
+
+target_include_directories(gauges PUBLIC $ENV{SSD1306_LIB_PATH})
 
 pico_add_extra_outputs(gauges)
 
